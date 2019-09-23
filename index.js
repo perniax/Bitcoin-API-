@@ -44,6 +44,17 @@ app.use((req, res, next) => {
 
 //******* END OF BOILERPLATE *********
 
+app.get("/", (req, res) => {
+    res.redirect("/quotes");
+});
+
+app.get("/quotes", (req, res) => {
+    res.render("quotes", {
+        name: "quotes",
+        layout: "main"
+    });
+});
+
 app.listen(process.env.PORT || 8080, () => {
     console.log("My express server is running");
 });
