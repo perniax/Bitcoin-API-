@@ -1,15 +1,22 @@
 const express = require("express");
 const hb = require("express-handlebars");
 // const fs = require("fs");
-const db = require("./utils/db");
+// const db = require("./utils/db");
 // const support = require("./supporters");
 let cookieSession = require("cookie-session");
-const bc = require("./utils/bc");
-let { hash, compare } = require("./utils/bc");
+// const bc = require("./utils/bc");
+// let { hash, compare } = require("./utils/bc");
 const csurf = require("csurf");
 const app = express();
 
 const binance = require("./binanceAPI");
+const {
+    prices,
+    bookTickers,
+    prevDay,
+    prevDayStatsSymbols,
+    candlesticks
+} = require("./binanceAPI");
 // const binanceAPI = require("binance-api-node");
 
 app.use(
@@ -58,16 +65,16 @@ app.get("/quotes", (req, res) => {
     });
 });
 
-app.get("/quotes", function(req, res) {
-    binance()
-        .then(function(binance) {
-            res.json(binance);
-        })
-        .catch(function() {
-            res.sendStatus(500);
-        });
+app.get("/quotes", (req, res) => {
+    binance.prices(function(err, ticker) {
+        console.log("ticker from prices: ", ticker);
+        res.json(ticker);
+    });
 });
-
+//**ticker from binanceAPI is a huge
+// object {} with coins and prices
+// the first element is ETHBC;
+// so, ticker.ETHBTC should return the fist quote
 /////////////////////////////////
 
 ///////////////////////////////

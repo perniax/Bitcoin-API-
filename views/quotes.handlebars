@@ -19,9 +19,15 @@
             {{#prevDay}}
                 <div class = 'bookTickers'>
                     <h1>Get 24hr ticker price change statistics for all symbols</h1>
-                    <p>{{symbol}}</p>
+                    <p>{{prevDay}}</p>
                 </div>
             {{/prevDay}}
+            {{#ticks}}
+                <div class="candlestick">
+                    <h1> ticks on the candlestick </h1>
+                    <p>{{ticks}} </p>
+                </div>
+            {{/ticks}}
         </div>
 
 </section>
