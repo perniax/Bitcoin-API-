@@ -2,8 +2,27 @@
 
 <section>
 
-    <h1>Please make a query</h1>
-
+    <h1>Current prices!</h1>
+        <div>
+            {{#ticker}}
+                <div class = "CoinPrices">
+                    <h1>Getting latest price of all symbols</h1>
+                    <p>{{ticker}}</p>
+                </div>
+            {{/ticker}}
+            {{#ticker}}
+                <div class = "bidAskPrices">
+                    <h1> Getting bid/ask prices for all symbols </h1>
+                    <p>{{ticker.BTCUSDT}}</p>
+                </div>
+            {{/ticker}}
+            {{#prevDay}}
+                <div class = 'bookTickers'>
+                    <h1>Get 24hr ticker price change statistics for all symbols</h1>
+                    <p>{{symbol}}</p>
+                </div>
+            {{/prevDay}}
+        </div>
 
 </section>
 

@@ -9,6 +9,7 @@ let { hash, compare } = require("./utils/bc");
 const csurf = require("csurf");
 const app = express();
 
+const binance = require("./binanceAPI");
 // const binanceAPI = require("binance-api-node");
 
 app.use(
@@ -55,6 +56,16 @@ app.get("/quotes", (req, res) => {
         name: "quotes",
         layout: "main"
     });
+});
+
+app.get("/quotes", function(req, res) {
+    binance()
+        .then(function(binance) {
+            res.json(binance);
+        })
+        .catch(function() {
+            res.sendStatus(500);
+        });
 });
 
 /////////////////////////////////
