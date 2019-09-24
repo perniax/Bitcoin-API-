@@ -60,7 +60,9 @@ app.get("/", (req, res) => {
 
 app.get("/quotes", (req, res) => {
     res.render("quotes", {
-        name: "quotes",
+        ticker: "ticker",
+        prevDay: "prevDay",
+        ticks: "ticks",
         layout: "main"
     });
 });
@@ -68,6 +70,7 @@ app.get("/quotes", (req, res) => {
 app.get("/quotes", (req, res) => {
     binance.prices(function(err, ticker) {
         console.log("ticker from prices: ", ticker);
+        console.log("ETHBC price from ticker: ", ticker.ETHBTC);
         res.json(ticker);
     });
 });

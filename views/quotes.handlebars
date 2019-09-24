@@ -1,36 +1,43 @@
 
+<main>
 
-<section>
-
-    <h1>Current prices!</h1>
+    <h1>Results:</h1>
         <div>
+            <div class = "coinPrices">
             {{#ticker}}
-                <div class = "CoinPrices">
+
                     <h1>Getting latest price of all symbols</h1>
                     <p>{{ticker}}</p>
-                </div>
+
             {{/ticker}}
-            {{#ticker}}
+                </div>
                 <div class = "bidAskPrices">
+            {{#ticker}}
+
                     <h1> Getting bid/ask prices for all symbols </h1>
                     <p>{{ticker.BTCUSDT}}</p>
-                </div>
+
             {{/ticker}}
+            </div>
+            <div class = 'bookTickers'>
             {{#prevDay}}
-                <div class = 'bookTickers'>
+
                     <h1>Get 24hr ticker price change statistics for all symbols</h1>
                     <p>{{prevDay}}</p>
-                </div>
+
             {{/prevDay}}
+            </div>
+            <div class="candlestick">
             {{#ticks}}
-                <div class="candlestick">
+
                     <h1> ticks on the candlestick </h1>
                     <p>{{ticks}} </p>
-                </div>
+
             {{/ticks}}
+            </div>
         </div>
 
-</section>
 
-<main>
+
+
 </main>

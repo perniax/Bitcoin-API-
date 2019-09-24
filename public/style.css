@@ -4,17 +4,41 @@
     background-color: #02c3fc;
 }
 
+body {
+    min-height: 100vh;
+}
+
 header {
     background: #293462;
 }
 
 main {
+    display: grid;
     background: #216583;
+    margin: 10px;
+    min-height: 70vh;
 }
 
-section {
-    background: #00818a;
-}
 footer {
-    background: #f7be16;
+    background-color: #f7be16;
+}
+
+.coinPrices {
+    background-color: #293462;
+    margin: 10px;
+}
+
+.bidAskPrices {
+    background-color: #00818a;
+    margin: 10px;
+}
+
+.bookTickers {
+    background-color: #216583;
+    margin: 10px;
+}
+
+.candlestick {
+    background-color: #293462;
+    margin: 10px;
 }

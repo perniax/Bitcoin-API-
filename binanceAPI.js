@@ -19,7 +19,7 @@ module.exports.bookTickers = function() {
     // Getting bid/ask prices for all symbols
     binance.bookTickers((error, ticker) => {
         // console.log("bookTickers()", ticker);
-        // console.log("Price of BNB: ", ticker.BNBBTC);
+        console.log("Price of BNB: ", ticker.BNBBTC);
         return ticker;
     });
 };
