@@ -9,6 +9,8 @@ let { hash, compare } = require("./utils/bc");
 const csurf = require("csurf");
 const app = express();
 
+// const binanceAPI = require("binance-api-node");
+
 app.use(
     cookieSession({
         secret: `Hakuna_Matata`,
@@ -54,6 +56,12 @@ app.get("/quotes", (req, res) => {
         layout: "main"
     });
 });
+
+/////////////////////////////////
+
+///////////////////////////////
+
+//*****API request****
 
 app.listen(process.env.PORT || 8080, () => {
     console.log("My express server is running");

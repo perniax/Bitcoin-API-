@@ -8,12 +8,13 @@
         "start": "node index.js"
     },
     "engines": {
-        "node": "10.15.3"
+        "node": "12.10.0"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
         "bcryptjs": "^2.4.3",
+        "binance-api-node": "^0.9.5",
         "cookie-parser": "^1.4.3",
         "cookie-session": "^2.0.0-alpha.1",
         "csurf": "^1.9.0",
