@@ -48,7 +48,7 @@ app.use(function(req, res, next) {
 });
 
 app.use((req, res, next) => {
-    // console.log("The route is: ", req.url);
+    console.log("The route is: ", req.url);
     next();
 });
 

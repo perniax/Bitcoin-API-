@@ -43,16 +43,16 @@ module.exports.prevDay = function() {
     });
 };
 
-module.exports.prevDayStatsSymbols = function() {
-    // Get 24hr ticker price change statistics for a symbol
-    binance.prevDay("BNBBTC", (error, prevDay, symbol) => {
-        // console.log(symbol + " previous day:", prevDay);
-        console.log(
-            "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
-        );
-        return prevDay, symbol;
-    });
-};
+// module.exports.prevDayStatsSymbols = function() {
+// Get 24hr ticker price change statistics for a symbol
+binance.prevDay("BNBBTC", (error, prevDay, symbol) => {
+    // console.log(symbol + " previous day:", prevDay);
+    console.log(
+        "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
+    );
+    return prevDay, symbol;
+});
+// };
 
 module.exports.candlesticks = function() {
     // Get Kline/candlestick data for a symbol
