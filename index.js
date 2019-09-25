@@ -115,20 +115,38 @@ app.get("/stats", (req, res) => {
 
 // Get 24hr ticker price change statistics for a symbol
 
-app.get("/prevday", (req, res) => {
-    binance.prevDay("BNBBTC", (error, prevDay, symbol) => {
-        // console.log(symbol + " previous day:", prevDay);
-        console.log(
-            "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
-        );
-        console.log("****prevDay: ", prevDay);
-        res.render("prevday", {
-            name: "prevday",
-            symbol: symbol,
+app.get("/history", (req, res) => {
+    binance.prevDay("BTCUSDT", (error, prevDay, symbol) => {
+        console.log(symbol + " previous day:", prevDay);
+        // console.log(
+        //     "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
+        // );
+        console.log("prevDay: ", prevDay);
+        res.render("history", {
+            name: "history",
+            prevDay: prevDay,
             layout: "main"
         });
     });
 });
+
+//***WEBSOCKETS***
+
+// import Binance from "binance-api-node";
+//
+// const client = Binance();
+//
+// app.get("/live", (req, res) => {
+//     client.ws.partialDepth({ symbol: "ETHBTC", level: 10 }, depth => {
+//         console.log(depth);
+//         res.render("live", {
+//             name: "live",
+//             depth: depth,
+//             layout: "main"
+//         });
+//     });
+// });
+
 //*****API request****
 
 app.listen(process.env.PORT || 8080, () => {

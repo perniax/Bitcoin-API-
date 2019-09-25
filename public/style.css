@@ -29,6 +29,10 @@ footer {
     background-color: #f7be16;
 }
 
+li {
+    border: 5px solid #00818a;
+}
+
 .coinPrices {
     background-color: #293462;
     margin: 10px;
