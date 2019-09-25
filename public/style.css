@@ -19,13 +19,14 @@ header {
 
 main {
     display: grid;
-    background: #064acb;
+    background: #1f3c88;
     min-height: 70vh;
 }
 
 .logo {
     height: 100px;
     width: 100px;
+    margin: 30px;
 }
 
 footer {
@@ -94,5 +95,4 @@ button {
 
 button:hover {
     border: 5px solid #ffe837;
-    transform: scale(1.1);
 }
