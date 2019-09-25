@@ -1,0 +1,16 @@
+<main>
+
+    <h1>Bid & Ask prices of all pairs:</h1>
+        <div>
+            {{#each ticker}}
+            <div class = "coinPrices">
+                <h1>Symbol: {{symbol}}</h1>
+                    <ul>
+                    <li>bid price: {{bidPrice}} | bid quantity: {{bidQty}} | ask price: {{askPrice}} | ask quantity: {{askQty}}</li>
+                    </ul>
+            </div>
+            {{/each}}
+
+                </div>
+<button><a href="/welcome"> Home </a></button>
+</main>

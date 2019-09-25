@@ -1,64 +1,43 @@
-const { APIKEY, APISECRET } = require("./secrets.json");
-const https = require("https");
+// module.exports.bookTickers = function() {
+//
+//     binance.bookTickers((error, ticker) => {
+//         // console.log("bookTickers()", ticker);
+//         console.log("Price of BNB: ", ticker.BNBBTC);
+//         return ticker;
+//     });
+// };
+//
+// module.exports.prevDay = function() {
+//     // Get 24hr ticker price change statistics for all symbols
+//     binance.prevDay(false, (error, prevDay) => {
+//         // console.log(prevDay); // view all data
+//         for (let obj of prevDay) {
+//             let symbol = obj.symbol;
+//             // console.log(
+//             //     symbol +
+//             //         " volume:" +
+//             //         obj.volume +
+//             //         " change: " +
+//             //         obj.priceChangePercent +
+//             //         "%"
+//             // );
+//         }
+//
+//         return prevDay;
+//     });
+// };
 
-const binance = require("node-binance-api")().options({
-    APIKEY,
-    APISECRET,
-    useServerTime: true // If you get timestamp errors, synchronize to server time at startup
-});
-
-// console.log("binance", binance);
-
-module.exports.prices = function() {
-    // Getting latest price of all symbols
-
-    return binance.prices((error, ticker) => {
-        console.log("prices()", ticker);
-        // console.log("Price of BTC: ", ticker.BTCUSDT);
-        return ticker;
-    });
-};
-
-module.exports.bookTickers = function() {
-    // Getting bid/ask prices for all symbols
-    binance.bookTickers((error, ticker) => {
-        // console.log("bookTickers()", ticker);
-        console.log("Price of BNB: ", ticker.BNBBTC);
-        return ticker;
-    });
-};
-
-module.exports.prevDay = function() {
-    // Get 24hr ticker price change statistics for all symbols
-    binance.prevDay(false, (error, prevDay) => {
-        // console.log(prevDay); // view all data
-        for (let obj of prevDay) {
-            let symbol = obj.symbol;
-            // console.log(
-            //     symbol +
-            //         " volume:" +
-            //         obj.volume +
-            //         " change: " +
-            //         obj.priceChangePercent +
-            //         "%"
-            // );
-        }
-
-        return prevDay;
-    });
-};
-
-module.exports.prevDayStatsSymbols = function() {
-    // Get 24hr ticker price change statistics for a symbol
-    binance.prevDay("BNBBTC", (error, prevDay, symbol) => {
-        // console.log(symbol + " previous day:", prevDay);
-        console.log(
-            "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
-        );
-        console.log("****prevDay: ", prevDay);
-        return prevDay, symbol;
-    });
-};
+// module.exports.prevDayStatsSymbols = function() {
+//     // Get 24hr ticker price change statistics for a symbol
+//     binance.prevDay("BNBBTC", (error, prevDay, symbol) => {
+//         // console.log(symbol + " previous day:", prevDay);
+//         console.log(
+//             "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
+//         );
+//         console.log("****prevDay: ", prevDay);
+//         return prevDay, symbol;
+//     });
+// };
 
 module.exports.candlesticks = function() {
     // Get Kline/candlestick data for a symbol

@@ -9,6 +9,7 @@ body {
 }
 
 header {
+    display: flex;
     background: #293462;
 }
 
@@ -17,6 +18,11 @@ main {
     background: #216583;
     margin: 10px;
     min-height: 70vh;
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
 }
 
 footer {

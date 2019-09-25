@@ -1,0 +1,15 @@
+<main>
+
+    <h1>Price changes (%) from the last 24 hours</h1>
+        <div>
+            {{#each prevDay}}
+            <div class = "coinPrices">
+                <h1>Symbol: {{symbol}}</h1>
+                    <ul>
+                    <li> Price Change(%): {{priceChangePercent}} | Previous Close Price: {{prevClosePrice}} | Nominal price change {{priceChange}} </li>
+                    </ul>
+                </div>
+            {{/each}}
+            </div>
+<button><a href="/welcome"> Home </a></button>
+</main>
