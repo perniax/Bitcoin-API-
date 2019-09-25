@@ -8,16 +8,13 @@ let cookieSession = require("cookie-session");
 // let { hash, compare } = require("./utils/bc");
 const csurf = require("csurf");
 const app = express();
+const { APIKEY, APISECRET } = require("./secrets.json");
 
-const binance = require("./binanceAPI");
-const {
-    prices,
-    bookTickers,
-    prevDay,
-    prevDayStatsSymbols,
-    candlesticks
-} = require("./binanceAPI");
-// const binanceAPI = require("binance-api-node");
+const binance = require("node-binance-api")().options({
+    APIKEY,
+    APISECRET,
+    useServerTime: true // If you get timestamp errors, synchronize to server time at startup
+});
 
 app.use(
     cookieSession({
@@ -58,20 +55,25 @@ app.get("/", (req, res) => {
     res.redirect("/quotes");
 });
 
-app.get("/quotes", (req, res) => {
-    res.render("quotes", {
-        ticker: "ticker",
-        prevDay: "prevDay",
-        ticks: "ticks",
-        layout: "main"
-    });
-});
+// app.get("/quotes", (req, res) => {
+//     res.render("quotes", {
+//         ticker: "ticker",
+//         prevDay: "prevDay",
+//         ticks: "ticks",
+//         layout: "main"
+//     });
+// });
 
 app.get("/quotes", (req, res) => {
-    binance.prices(function(err, ticker) {
-        console.log("ticker from prices: ", ticker);
-        console.log("ETHBC price from ticker: ", ticker.ETHBTC);
-        res.json(ticker);
+    binance.prices((error, ticker) => {
+        console.log("prices()", ticker);
+        // console.log("Price of BTC: ", ticker.BTCUSDT);
+
+        res.render("quotes", {
+            name: "quotes",
+            ticker: ticker,
+            layout: "main"
+        });
     });
 });
 //**ticker from binanceAPI is a huge
