@@ -114,8 +114,8 @@ app.get("/stats", (req, res) => {
 });
 
 // Get 24hr ticker price change statistics for a symbol
-
-app.get("/history", (req, res) => {
+//*******0
+app.get("/bitcoin", (req, res) => {
     binance.prevDay("BTCUSDT", (error, prevDay, symbol) => {
         console.log(symbol + " previous day:", prevDay);
         // console.log(
@@ -123,7 +123,143 @@ app.get("/history", (req, res) => {
         // );
         console.log("prevDay: ", prevDay);
         res.render("history", {
-            name: "history",
+            name: "bitcoin",
+            prevDay: prevDay,
+            layout: "main"
+        });
+    });
+});
+
+//*****1
+
+app.get("/ripple", (req, res) => {
+    binance.prevDay("XRPUSDT", (error, prevDay, symbol) => {
+        console.log(symbol + " previous day:", prevDay);
+        // console.log(
+        //     "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
+        // );
+        console.log("prevDay: ", prevDay);
+        res.render("history", {
+            name: "ripple",
+            prevDay: prevDay,
+            layout: "main"
+        });
+    });
+});
+
+//*****2
+
+app.get("/litecoin", (req, res) => {
+    binance.prevDay("LTCUSDT", (error, prevDay, symbol) => {
+        console.log(symbol + " previous day:", prevDay);
+        // console.log(
+        //     "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
+        // );
+        console.log("prevDay: ", prevDay);
+        res.render("history", {
+            name: "litecoin",
+            prevDay: prevDay,
+            layout: "main"
+        });
+    });
+});
+
+//*****3
+
+app.get("/ethereum", (req, res) => {
+    binance.prevDay("ETHUSDT", (error, prevDay, symbol) => {
+        console.log(symbol + " previous day:", prevDay);
+        // console.log(
+        //     "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
+        // );
+        console.log("prevDay: ", prevDay);
+        res.render("history", {
+            name: "ethereum",
+            prevDay: prevDay,
+            layout: "main"
+        });
+    });
+});
+
+//*****4
+
+app.get("/neo", (req, res) => {
+    binance.prevDay("NEOUSDT", (error, prevDay, symbol) => {
+        console.log(symbol + " previous day:", prevDay);
+        // console.log(
+        //     "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
+        // );
+        console.log("prevDay: ", prevDay);
+        res.render("history", {
+            name: "neo",
+            prevDay: prevDay,
+            layout: "main"
+        });
+    });
+});
+
+//*****5
+
+app.get("/monero", (req, res) => {
+    binance.prevDay("XMRUSDT", (error, prevDay, symbol) => {
+        console.log(symbol + " previous day:", prevDay);
+        // console.log(
+        //     "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
+        // );
+        console.log("prevDay: ", prevDay);
+        res.render("history", {
+            name: "monero",
+            prevDay: prevDay,
+            layout: "main"
+        });
+    });
+});
+
+//*****6
+
+app.get("/iota", (req, res) => {
+    binance.prevDay("IOTAUSDT", (error, prevDay, symbol) => {
+        console.log(symbol + " previous day:", prevDay);
+        // console.log(
+        //     "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
+        // );
+        console.log("prevDay: ", prevDay);
+        res.render("history", {
+            name: "iota",
+            prevDay: prevDay,
+            layout: "main"
+        });
+    });
+});
+
+//*****7
+
+app.get("/dash", (req, res) => {
+    binance.prevDay("DASHUSDT", (error, prevDay, symbol) => {
+        console.log(symbol + " previous day:", prevDay);
+        // console.log(
+        //     "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
+        // );
+        console.log("prevDay: ", prevDay);
+        res.render("history", {
+            name: "dash",
+            prevDay: prevDay,
+            layout: "main"
+        });
+    });
+});
+
+//*****8
+
+app.get("/cardano", (req, res) => {
+    binance.prevDay("ADAUSDT", (error, prevDay, symbol) => {
+        console.log(symbol + " previous day:", prevDay);
+        // console.log(
+        //     "BNB change since yesterday: " + prevDay.priceChangePercent + "%"
+        // );
+        console.log("prevDay: ", prevDay);
+        res.render("history", {
+            name: "cardano",
             prevDay: prevDay,
             layout: "main"
         });
