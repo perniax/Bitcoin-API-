@@ -1,16 +1,22 @@
 <main>
 
     <h1>Bid & Ask prices of all pairs:</h1>
-        <div>
+    <div class=bid>
+
             {{#each ticker}}
-            <div class = "coinPrices">
+            <span class = "bidAskCoins">
+                <span class="bidAskBox">
                 <h2>Symbol: {{symbol}}</h2>
-                    <ul>
-                    <li>bid price: {{bidPrice}} | bid quantity: {{bidQty}} | ask price: {{askPrice}} | ask quantity: {{askQty}}</li>
-                    </ul>
-            </div>
+                    <br>
+                    <p>bid price: {{bidPrice}}</p>
+                    <p>bid quantity: {{bidQty}}</p>
+                    <br>
+                    <p>ask price: {{askPrice}}</p>
+                    <p>ask quantity: {{askQty}}</p>
+                </span>
+            </span>
             {{/each}}
 
-                </div>
+</div>
 <button><a href="/welcome"> Home </a></button>
 </main>

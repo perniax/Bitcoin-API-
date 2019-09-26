@@ -1,15 +1,20 @@
 <main>
 
     <h1>Price changes (%) from the last 24 hours</h1>
-        <div>
+        <div class=bid>
+
             {{#each prevDay}}
-            <div class = "coinPrices">
+            <span class = "bidAskCoins">
+                <span class="bidAskBox">
                 <h1>Symbol: {{symbol}}</h1>
-                    <ul>
-                    <li> Price Change(%): {{priceChangePercent}} | Previous Close Price: {{prevClosePrice}} | Nominal price change {{priceChange}} </li>
-                    </ul>
-                </div>
+
+                    <p>Price Change(%): {{priceChangePercent}}</p>
+                    <p>Previous Close Price: {{prevClosePrice}}</p>
+                    <p> Nominal price change {{priceChange}}</p>
+                </span>
+                </span>
             {{/each}}
+            
             </div>
 <button><a href="/welcome"> Home </a></button>
 </main>
