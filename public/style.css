@@ -21,6 +21,7 @@ header {
     display: flex;
     background: #183661;
     text-align: center;
+    justify-content: center;
     min-height: 20vh;
     justify-content: center;
     align-self: center;
@@ -70,9 +71,19 @@ li {
 }
 
 .buttons {
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.homeButtons {
     display: flex;
     justify-content: space-around;
-    height: 100px;
+}
+
+#welcomeButton {
+    height: 150px;
+    width: 200px;
 }
 
 .homeButton {
@@ -119,9 +130,9 @@ li {
 }
 
 .bidAskCoins {
-    border: 1px solid #183661;
-    margin: 5px;
-    padding: 5px;
+    border: 2px solid #ffe837;
+    margin: 26px;
+    padding: 10px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
