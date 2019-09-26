@@ -266,17 +266,15 @@ app.get("/cardano", (req, res) => {
     });
 });
 
-//***WEBSOCKETS***
-
 // import Binance from "binance-api-node";
-//
+// set socks_proxy=socks://ip:port
 // const client = Binance();
 //
 // app.get("/live", (req, res) => {
 //     client.ws.partialDepth({ symbol: "ETHBTC", level: 10 }, depth => {
 //         console.log(depth);
-//         res.render("live", {
-//             name: "live",
+//         res.render("balance", {
+//             name: "balance",
 //             depth: depth,
 //             layout: "main"
 //         });

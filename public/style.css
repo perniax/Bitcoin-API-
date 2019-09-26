@@ -3,24 +3,48 @@
     font-family: "Montserrat", sans-serif;
 }
 
+html {
+    background-image: url("financialBackground.jpg") no repeat center center
+        fixed;
+}
+
 body {
     min-height: 100vh;
     margin: 0;
+    background-image: url("financialBackground.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    /* min-height: 70vh; */
 }
 
 header {
     display: flex;
     background: #183661;
     text-align: center;
-    height: 200px;
-    justify-content: space-between;
+    min-height: 20vh;
+    justify-content: center;
+    align-self: center;
     align-items: center;
 }
 
 main {
     display: grid;
-    background: #1f3c88;
+    background-image: url("financialBackground.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
     min-height: 70vh;
+}
+
+#bid {
+    background-image: url("financialBackground.jpg");
+    background-repeat: space;
+}
+
+.bid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-image: url("financialBackground.jpg");
+    background-repeat: round;
 }
 
 .logo {
@@ -37,6 +61,7 @@ main {
 
 footer {
     background-color: #183661;
+    min-height: 10vh;
 }
 
 li {
@@ -49,6 +74,10 @@ li {
     justify-content: space-around;
     height: 100px;
 }
+
+.homeButton {
+    width: 100%;
+}
 .coinPrices {
     /* background-color: #293462; */
     margin: 10px;
@@ -56,6 +85,7 @@ li {
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    /* background: #1f3c88; */
     /* display: grid;
     /* position: relative; */
     /* grid-template-columns: 1fr 1fr 1fr; */
@@ -68,6 +98,7 @@ li {
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    /* background: #1f3c88; */
 }
 
 .mainCoinsBox {
@@ -79,15 +110,12 @@ li {
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    background: #1f3c88;
 }
 
 .mainCoinsBoxInfo {
     display: grid;
-}
-
-.bid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    background: #1f3c88;
 }
 
 .bidAskCoins {
@@ -98,22 +126,8 @@ li {
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    background: #1f3c88;
 }
-
-/* .bidAskPrices {
-    background-color: #00818a;
-    margin: 10px;
-}
-
-.bookTickers {
-    background-color: #216583;
-    margin: 10px;
-}
-
-.candlestick {
-    background-color: #293462;
-    margin: 10px;
-} */
 
 h1 {
     color: #ffe837;
@@ -133,6 +147,9 @@ a {
     font-weight: bold;
 }
 
+#coinName {
+    color: #ffe837;
+}
 button {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -143,4 +160,25 @@ button {
 
 button:hover {
     border: 5px solid #ffe837;
+}
+
+input {
+    font-family: monospace;
+    width: 200px;
+}
+
+#results {
+    font-family: monospace;
+}
+
+.highlight {
+    background-color: rgba(51, 255, 233, 0.6);
+    font-weight: bold;
+    font-family: monospace;
+    width: 200px;
+}
+
+.result {
+    width: 200px;
+    font-family: monospace;
 }

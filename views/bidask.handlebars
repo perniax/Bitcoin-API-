@@ -1,9 +1,12 @@
+
+
 <main>
 
     <h1>Bid & Ask prices of all pairs:</h1>
-    <div class=bid>
+    <span class=bid>
 
             {{#each ticker}}
+
             <span class = "bidAskCoins">
                 <span class="bidAskBox">
                 <h2>Symbol: {{symbol}}</h2>
@@ -17,6 +20,6 @@
             </span>
             {{/each}}
 
-</div>
-<button><a href="/welcome"> Home </a></button>
+</span>
+<button class='homeButton'><a href="/welcome"> Home </a></button>
 </main>
